@@ -1,142 +1,124 @@
-:root{
-  --red:#FF3B30;     /* principal */
-  --blue:#0A1F44;    /* secundario */
-  --teal:#009688;    /* acento */
-  --gray:#F4F5F7;    /* fondos suaves */
-  --white:#FFFFFF;
-  --ink:#222222;     /* texto secundario */
+/* FUENTES: títulos = Space Grotesk, cuerpo = Inter */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #333333;
+  background-color: #FAFAFA;
+  line-height: 1.6;
 }
 
-html,body{height:100%;}
-body{
-  font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  color: var(--ink);
-  background: var(--white);
+/* Títulos generales */
+h1, h2, h3, h4, h5 {
+  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #111111;
 }
 
-main{min-height: calc(100vh - 140px);}
-
-.navbar-white{
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(10,31,68,.06);
+/* TITULAR HERO */
+.hero h1 {
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: #111111; /* ya no todo rojo */
 }
 
-.navbar .navbar-brand{
-  font-weight:700;
-  font-family:"Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:#0A1F44;
-}
-.navbar .navbar-brand .dot{color:var(--red);}
-.navbar .nav-link{
-  font-weight:500;
-  color: rgba(10,31,68,.85);
-}
-.navbar .nav-link.active{
-  color: var(--red);
-}
-.navbar .btn-cta{
-  padding-inline:18px;
+/* solo algunas palabras rojas si quieres envolverlas en <span class="highlight"> */
+.hero h1 .highlight {
+  color: #E22B2B;
 }
 
-/* Hero */
-
-.hero{
-  position:relative; overflow:hidden; background: linear-gradient(180deg, #FDF1EF 0%, #FFFFFF 60%);
-}
-.hero .waves{
-  position:absolute; inset:0;
-  background-image: radial-gradient(circle at 0 0, rgba(255,59,48,.25) 0, transparent 55%),
-                    radial-gradient(circle at 100% 0, rgba(10,31,68,.20) 0, transparent 55%);
-  opacity:.9;
-  pointer-events:none;
-}
-.hero .display-5{
-  color:#0A1F44;
-}
-.badge-brand{
-  display:inline-flex;
-  align-items:center;
-  border-radius:999px;
-  padding:4px 12px;
-  font-size:.8rem;
-  font-weight:600;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  background:rgba(255,59,48,.06);
-  color:#C5281E;
+/* Subtítulo arriba del h1 (“Autonomía · Innovación…”) */
+.hero .badge-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #777777;
 }
 
-/* Botones */
-
-.btn-cta{
-  background: var(--red); color:#fff; border-radius:999px; border:none;
-  font-weight:600; padding:.6rem 1.4rem; font-family:"Poppins";
-  box-shadow: 0 12px 30px rgba(255,59,48,.35);
-}
-.btn-cta:hover{ background:#E53327; color:#fff; }
-
-.btn-outline-blue{
-  background:transparent; color: var(--blue); border:2px solid var(--blue); border-radius:8px; font-family:"Poppins"; font-weight:600;
-}
-.btn-outline-blue:hover{ background: var(--blue); color: var(--white); }
-
-.card{border:none; background: var(--white);}
-.card.soft{ box-shadow: 0 18px 45px rgba(10,31,68,.12); border-radius: 16px; }
-.card.clean{ box-shadow: 0 8px 24px rgba(10,31,68,.10); border-radius: 16px; }
-.hover-elevate{transition: transform .2s ease, box-shadow .2s ease;}
-.hover-elevate:hover{ transform: translateY(-4px); box-shadow: 0 18px 45px rgba(10,31,68,.14); }
-
-.bg-gray{ background: var(--gray)!important; }
-.section{ padding: 64px 0; }
-
-.form-dark{
-  background:#0A1F44;
-  color:#fff;
-  border-radius:16px;
+/* Párrafo debajo del h1 */
+.hero p.lead {
+  font-size: 1.05rem;
+  max-width: 40rem;
+  margin: 0 auto 1.8rem auto;
+  color: #404040;
 }
 
-.footer{
-  border-top:1px solid rgba(10,31,68,.06);
-  background:#FFFFFF;
+/* Contenedor hero más controlado */
+.hero.section .container {
+  max-width: 980px;
 }
 
-/* Reveal animation */
-
-.reveal{
-  opacity:0;
-  transform: translateY(16px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform:none;
-}
-
-/* Formulario */
-
-#contact-form .form-label{
-  font-weight:600;
+/* Botones hero */
+.btn-cta {
+  background: #E22B2B;
+  color: #FFFFFF;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  box-shadow: 0 12px 30px rgba(226, 43, 43, 0.35);
 }
 
-#form-status{
-  min-height:1.2em;
+.btn-cta:hover {
+  background: #C92020;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(226, 43, 43, 0.4);
 }
 
-/* Utilidades */
-
-.title{
-  font-weight:600;
-  color:#0A1F44;
+.btn-outline-blue {
+  background: transparent;
+  color: #111111;
+  border-radius: 999px;
+  border: 1px solid #D0D0D0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
-/* Responsivo */
-
-@media (max-width: 767.98px){
-  .section{ padding: 48px 0; }
+.btn-outline-blue:hover {
+  border-color: #E22B2B;
+  color: #E22B2B;
 }
 
-@media (prefers-reduced-motion: reduce){
-  *{animation-duration:0.01ms!important; animation-iteration-count:1!important; transition-duration:0.01ms!important;}
-  .reveal{opacity:1!important; transform:none!important;}
+/* ===============================
+   NAVBAR
+   =============================== */
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
 }
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer img {
+  height: 24px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+/* ===============================
+   SECCIONES
+   =============================== */
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section.mt-lg {
+  margin-top: 3rem;
+}
+
