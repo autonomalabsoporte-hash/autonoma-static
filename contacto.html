@@ -6,18 +6,16 @@
   <title>Contacto — Autónoma.lab</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <meta name="theme-color" content="#0A1F44"/>
+  <meta name="theme-color" content="#0f172a"/>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-white py-3">
+<nav class="navbar navbar-expand-lg py-3">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
-     <img src="assets/img/icon.png">
-      <span class="brand-text">Autónoma<span class="dot">.lab</span></span>
+      <img src="assets/img/icon.png" alt="Autónoma.lab">
+      <span>Autónoma<span class="dot">.lab</span></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
@@ -25,6 +23,7 @@
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
         <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
         <li class="nav-item ms-lg-3"><a class="btn btn-cta" href="contacto.html">Solicita tu demo</a></li>
@@ -39,9 +38,9 @@
       <div class="row g-4">
         <div class="col-lg-6">
           <h2 class="mb-3">Conversemos</h2>
-          <p class="mb-4">
-            Cuéntanos tu contexto y tu primer caso de uso.
-            Diseñamos la solución mínima para validar rápido.
+          <p class="mb-4 lead">
+            Cuéntanos tu contexto, tus restricciones y tu primer caso de uso.
+            Diseñamos la solución mínima para validar rápido sin riesgos.
           </p>
           <div class="card clean">
             <div class="card-body p-4">
@@ -52,18 +51,30 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Correo electrónico</label>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="tucorreo@dominio.com" required>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="tu@empresa.com" required>
                 </div>
                 <div class="mb-3">
-                  <label for="subject" class="form-label">Asunto (opcional)</label>
-                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Asunto (opcional)">
+                  <label for="company" class="form-label">Empresa</label>
+                  <input type="text" id="company" name="company" class="form-control" placeholder="Nombre de tu empresa">
                 </div>
                 <div class="mb-3">
-                  <label for="message" class="form-label">Mensaje</label>
-                  <textarea id="message" name="message" class="form-control" rows="5" placeholder="Cuéntanos qué necesitas" required></textarea>
+                  <label for="subject" class="form-label">¿Cuál es tu principal desafío?</label>
+                  <select id="subject" name="subject" class="form-control">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Optimización de procesos">Optimización de procesos manuales</option>
+                    <option value="Business Intelligence">Necesito BI y dashboards</option>
+                    <option value="Automatización">Automatización de tareas repetitivas</option>
+                    <option value="Integraciones">Integrar sistemas existentes</option>
+                    <option value="Sistema a medida">Necesito un sistema a medida</option>
+                    <option value="Otro">Otro (especifica abajo)</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Cuéntanos más</label>
+                  <textarea id="message" name="message" class="form-control" rows="5" placeholder="Contexto, restricciones, datos, timeline..." required></textarea>
                 </div>
                 <div class="d-grid mb-2">
-                  <button type="submit" class="btn btn-cta btn-lg">Enviar mensaje</button>
+                  <button type="submit" class="btn btn-cta btn-lg">Enviar solicitud</button>
                 </div>
                 <div id="form-status" class="small mt-2"></div>
               </form>
@@ -72,16 +83,43 @@
         </div>
 
         <div class="col-lg-6">
-          <section class="p-4" style="background:#0A1F44; border-radius:16px;">
-            <h5 class="fw-bold mb-3" style="color:#fff;">¿Por qué confiar?</h5>
-            <ul class="mb-0 text-white-50">
-              <li>Simplicidad práctica: claridad y control.</li>
-              <li>Iteración rápida: riesgo bajo, valor temprano.</li>
-              <li>Aprendizaje continuo: capacidades que quedan en tu equipo.</li>
-            </ul>
-            <hr class="my-4" style="border-color: rgba(255,255,255,.2);">
-            <h6 class="fw-bold" style="color:#fff;">Email</h6>
-            <div class="text-white-50">autonoma.lab.soporte@gmail.com</div>
+          <!-- Por qué confiar -->
+          <section class="p-4 mb-4 form-dark">
+            <h5 class="fw-bold mb-4">Por Qué Confiar en Autónoma.lab</h5>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-2">✨ Simplicidad Práctica</h6>
+              <p class="small mb-0" style="color: var(--text-secondary);">Claridad y control. Sin complejidades innecesarias. Procesos que tu equipo entiende y controla.</p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-2">🔄 Iteración Rápida</h6>
+              <p class="small mb-0" style="color: var(--text-secondary);">Riesgo bajo, valor temprano. Validamos en el mercado desde el MVP. Primeros resultados en 2-4 semanas.</p>
+            </div>
+            <div class="mb-4">
+              <h6 class="fw-bold mb-2">📚 Aprendizaje Continuo</h6>
+              <p class="small mb-0" style="color: var(--text-secondary);">Capacidades que quedan en tu equipo. Documentación clara, transferencia real. Tu autonomía es nuestro éxito.</p>
+            </div>
+            <hr style="border-color: var(--border-light);">
+            <h6 class="fw-bold mb-2">📧 Contacto Directo</h6>
+            <p class="small mb-0" style="color: var(--text-secondary);">autonoma.lab.soporte@gmail.com</p>
+          </section>
+
+          <!-- Timeline del proceso -->
+          <section class="p-4" style="background: var(--background-gray); border-radius: 12px;">
+            <h5 class="fw-bold mb-3">Nuestro Proceso</h5>
+            <div class="small">
+              <div class="mb-3 pb-3" style="border-bottom: 1px solid var(--border-light);">
+                <strong style="color: var(--accent-cyan);">Semana 1:</strong> Diagnóstico y priorización
+              </div>
+              <div class="mb-3 pb-3" style="border-bottom: 1px solid var(--border-light);">
+                <strong style="color: var(--accent-cyan);">Semana 2-3:</strong> Diseño y prototipo
+              </div>
+              <div class="mb-3 pb-3" style="border-bottom: 1px solid var(--border-light);">
+                <strong style="color: var(--accent-cyan);">Semana 4-6:</strong> Desarrollo y piloto
+              </div>
+              <div>
+                <strong style="color: var(--accent-cyan);">Semana 7+:</strong> Implementación y soporte
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -90,12 +128,19 @@
 </main>
 
 <footer class="footer mt-auto">
-  <div class="container py-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
-    <div class="d-flex align-items-center mb-3 mb-md-0">
-      <img src="assets/img/icon.png">
-      <strong>Autónoma.lab</strong>
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+        <img src="assets/img/icon.png" alt="Autónoma.lab">
+        <div>
+          <strong>Autónoma.lab</strong>
+          <div class="small">Aliado estratégico para la autonomía operativa</div>
+        </div>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div class="small">autonoma.lab.soporte@gmail.com</div>
+      </div>
     </div>
-    <div class="small">autonoma.lab.soporte@gmail.com</div>
   </div>
 </footer>
 

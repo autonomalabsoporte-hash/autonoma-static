@@ -1,19 +1,49 @@
-/* FUENTES: títulos = Space Grotesk, cuerpo = Inter */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+/* FUENTES: títulos = DM Sans, cuerpo = Inter, monoespaciada = JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* PALETA DE COLORES */
+:root {
+  --primary-dark: #CC1C1C;        /* Rojo Vibrante - Color Primario (del Logo) */
+  --primary-light: #E41836;       /* Rojo Más Brillante - CTAs & Acciones */
+  --primary-dark-alt: #8B1414;    /* Rojo Oscuro - Hover States */
+  --background-white: #ffffff;    /* Blanco Limpio */
+  --background-gray: #f8fafc;     /* Gris Muy Suave - Secciones Alternas */
+  --text-primary: #1a1a1a;        /* Texto Principal - Gris Oscuro */
+  --text-secondary: #64748b;      /* Texto Secundario */
+  --border-light: #e2e8f0;        /* Bordes Suaves */
+}
 
 body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #333333;
-  background-color: #FAFAFA;
+  color: var(--text-primary);
+  background-color: var(--background-white);
   line-height: 1.6;
 }
 
 /* Títulos generales */
 h1, h2, h3, h4, h5 {
-  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
-  letter-spacing: -0.03em;
-  color: #111111;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Detalles técnicos con monoespaciada */
+code, .code-label, .tech-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  font-weight: 500;
+  background-color: var(--background-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+
+.hero {
+  background: linear-gradient(135deg, var(--background-white) 0%, var(--background-gray) 100%);
 }
 
 /* TITULAR HERO */
@@ -21,22 +51,22 @@ h1, h2, h3, h4, h5 {
   font-size: clamp(2.2rem, 3.4vw, 3rem);
   line-height: 1.15;
   margin-bottom: 1rem;
-  color: #111111; /* ya no todo rojo */
+  color: var(--text-primary);
 }
 
-/* solo algunas palabras rojas si quieres envolverlas en <span class="highlight"> */
+/* solo algunas palabras con accent si quieres envolverlas en <span class="highlight"> */
 .hero h1 .highlight {
-  color: #E22B2B;
+  color: var(--accent-cyan);
 }
 
-/* Subtítulo arriba del h1 (“Autonomía · Innovación…”) */
+/* Subtítulo arriba del h1 ("Autonomía · Innovación…") */
 .hero .badge-brand {
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #777777;
+  color: var(--primary-light);
 }
 
 /* Párrafo debajo del h1 */
@@ -44,7 +74,7 @@ h1, h2, h3, h4, h5 {
   font-size: 1.05rem;
   max-width: 40rem;
   margin: 0 auto 1.8rem auto;
-  color: #404040;
+  color: var(--text-secondary);
 }
 
 /* Contenedor hero más controlado */
@@ -52,42 +82,103 @@ h1, h2, h3, h4, h5 {
   max-width: 980px;
 }
 
-/* Botones hero */
+/* Tarjeta suave */
+.card.soft {
+  border: 1px solid var(--border-light);
+  background: var(--background-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card.soft h5 {
+  color: var(--text-primary);
+}
+
+.card.soft p {
+  color: var(--text-secondary);
+}
+
+/* ===============================
+   BOTONES
+   =============================== */
+
+/* Botones CTA */
 .btn-cta {
-  background: #E22B2B;
+  background: var(--primary-light);
   color: #FFFFFF;
   border-radius: 999px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   padding: 0.7rem 1.6rem;
   border: none;
-  box-shadow: 0 12px 30px rgba(226, 43, 43, 0.35);
+  box-shadow: 0 12px 30px rgba(228, 24, 54, 0.25);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-cta:hover {
-  background: #C92020;
+  background: var(--primary-dark-alt);
   color: #FFFFFF;
-  transform: translateY(-1px);
-  box-shadow: 0 16px 40px rgba(226, 43, 43, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(228, 24, 54, 0.35);
 }
 
 .btn-outline-blue {
   background: transparent;
-  color: #111111;
+  color: var(--text-primary);
   border-radius: 999px;
-  border: 1px solid #D0D0D0;
+  border: 1px solid var(--border-light);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-outline-blue:hover {
-  border-color: #E22B2B;
-  color: #E22B2B;
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+  background-color: rgba(228, 24, 54, 0.05);
+}
+
+/* Botón outline para fondo oscuro */
+.btn-outline-light {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.7rem 1.6rem;
+}
+
+.btn-outline-light:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
 }
 
 /* ===============================
    NAVBAR
    =============================== */
+
+.navbar {
+  background: var(--background-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-primary) !important;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.navbar-brand .dot {
+  color: var(--primary-light);
+}
 
 .navbar-brand img {
   height: 32px;
@@ -100,14 +191,53 @@ h1, h2, h3, h4, h5 {
   transform: scale(1.05);
 }
 
+.nav-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-light) !important;
+}
+
 /* ===============================
-   FOOTER
+   TARJETAS (CARDS)
    =============================== */
 
-footer img {
-  height: 24px;
-  width: auto;
-  margin-right: 0.5rem;
+.card.clean {
+  border: 1px solid var(--border-light);
+  background: var(--background-white);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card.clean .title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+}
+
+.card.clean p {
+  color: var(--text-secondary);
+}
+
+.card.clean:hover {
+  box-shadow: 0 8px 24px rgba(228, 24, 54, 0.12);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.hover-elevate {
+  transition: all 0.3s ease;
+}
+
+.hover-elevate:hover {
+  box-shadow: 0 12px 32px rgba(228, 24, 54, 0.15);
+  transform: translateY(-4px);
 }
 
 /* ===============================
@@ -116,9 +246,254 @@ footer img {
 
 .section {
   padding: 4rem 2rem;
+  background: var(--background-white);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.section h2 .highlight {
+  color: var(--accent-cyan);
+}
+
+.section.bg-gray {
+  background: var(--background-gray);
 }
 
 .section.mt-lg {
   margin-top: 3rem;
 }
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.section ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-light);
+  font-weight: bold;
+}
+
+/* ===============================
+   FORMULARIOS
+   =============================== */
+
+.form-control {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: var(--background-white);
+}
+
+.form-control:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(228, 24, 54, 0.1);
+  color: var(--text-primary);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-dark {
+  background: var(--background-gray);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+.footer {
+  background: var(--background-gray);
+  border-top: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer strong {
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
+
+footer img {
+  height: 24px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+/* ===============================
+   TIMELINE / PASOS (A1-A5)
+   =============================== */
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-step .step-number {
+  min-width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 4px 15px rgba(228, 24, 54, 0.3);
+}
+
+.timeline-step .step-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.timeline-step .step-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.timeline-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 29px;
+  top: 60px;
+  width: 2px;
+  height: calc(100% + 20px);
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary-light) 50%, transparent 100%);
+}
+
+/* ===============================
+   TARJETAS DE FILOSOFÍA (3 COLS)
+   =============================== */
+
+.philosophy-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--background-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 8px 24px rgba(228, 24, 54, 0.12);
+  transform: translateY(-4px);
+}
+
+.philosophy-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.philosophy-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+.philosophy-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ===============================
+   ANIMACIONES
+   =============================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-step {
+    gap: 1rem;
+  }
+
+  .btn-cta,
+  .btn-outline-blue {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .btn-cta,
+  .btn-outline-blue {
+    width: 100%;
+  }
+}
+
 
